@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -9,32 +5,6 @@
 	<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
 		<i class="fa fa-bars"></i>
 	</button>
-<<<<<<< HEAD
-=======
-	@if (Auth::user()->hasAnyRole('karyawan'))
-	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard#">
-		<div class="sidebar-brand-icon rotate-n-15">
-			<i class="fa fa-tree" aria-hidden="true"></i>
-		</div>
-		<div class="sidebar-brand-text mx-3">SI PERKASA <sup></sup></div>
-	</a>
-	
-	<!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-			</li>
-		</ul>
-	</div> -->
-	@endif
-
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 	<!-- Topbar Search -->
 	<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 		<div class="input-group">
@@ -85,11 +55,7 @@
 					Profile
 				</a>
 
-<<<<<<< HEAD
 				<a class="dropdown-item" href="/password">
-=======
-				<a class="dropdown-item" href="#">
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 					<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 					Change Password
 				</a>
@@ -104,11 +70,5 @@
 				</form>
 			</div>
 		</li>
-<<<<<<< HEAD
 	</ul>
-=======
-
-	</ul>
-
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 </nav>

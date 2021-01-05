@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Absen;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
-=======
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 
 class AbsenController extends Controller
 {
@@ -52,7 +49,6 @@ class AbsenController extends Controller
                 "btnOut" => "disabled"
             );
         }
-<<<<<<< HEAD
 
         $data_absen = Absen::where('user_id', $user_id)
             ->orderBy('date', 'desc')
@@ -112,62 +108,9 @@ class AbsenController extends Controller
         $absen->status = 'diterima';
         $absen->save();
         return back();
-=======
-
-        $data_absen = Absen::where('user_id', $user_id)
-            ->orderBy('date', 'desc')
-            ->paginate(20);
-        return view('absen.index', compact('data_absen', 'info', 'cek_absen'));
-    }
-    public function absen(Request $request)
-    {
-        // dd($request->all());
-        $this->timeZone('Asia/Jakarta');
-        $user_id = Auth::user()->id;
-        $date = date("Y-m-d"); // 2017-02-01
-        $time = date("H:i:s"); // 12:31:20
-        $catatan = $request->catatan;
-
-        switch ($request->input('submit')) {
-            case 'btnIn':
-                $absen = new Absen();
-                $absen->create([
-                    'user_id' => Auth::user()->id,
-                    'date' => $date,
-                    'time_in' => $time,
-                    'catatan' => $catatan,
-                    'status' => 'belum diterima'
-                ]);
-                return redirect()->back();
-                break;
-            
-            case 'btnOut':
-                $jamOut = (int)date('H');
-                $hari = 1;
-                    if($jamOut<17) $hari =0.5;
-                $absenOut = Absen::where(['date' => $date, 'user_id' => $user_id])
-                        ->update([
-                            'time_out' => $time,
-                            'catatan' => $catatan,
-                            'hari' =>$hari
-                        ]);
-                return redirect()->back();
-                break;
-        }
-
-
-        // dd($request->all());
-        return $request->all();
-    }
-    public function show()
-    {
-        $data_absen= Absen::all();
-        return view('absen.pengawas', ['data_absen'=> $data_absen]);
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
     }
     
 
-<<<<<<< HEAD
     public function StatusDitolak($id)
     {
         $absen = Absen::findOrFail($id);
@@ -181,22 +124,4 @@ class AbsenController extends Controller
 
         return back()->with('sukses', 'Pendapatan sudah dibayarkan');
     }   
-=======
-    public function StatusDiterima($id)
-    {
-        $absen = Absen::findOrFail($id);
-        $absen->status = 'diterima';
-        $absen->save();
-
-        return back();
-    }
-
-    public function StatusDitolak($id)
-    {
-        $absen = Absen::findOrFail($id);
-        $absen->status = 'ditolak';
-        $absen->save();
-        return back();
-    }
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 }

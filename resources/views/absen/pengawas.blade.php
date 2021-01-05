@@ -24,11 +24,7 @@
                             <th>Absen Keluar</th>
                             <th>Catatan</th>
                             <th>Status</th>
-<<<<<<< HEAD
                             @if(Auth::user()->hasAnyRole('manager'))
-=======
-                            @if(Auth::user()->hasAnyRole('pengawas'))
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                             <th>Aksi</th>
                             @endif
                         </tr>
@@ -37,16 +33,11 @@
                         @foreach ($data_absen as $absen)
                         <tr>
                             <td>{{DB::table('users')->where('id', $absen->user_id)->value('nama')}}</td>
-<<<<<<< HEAD
-                            <td>{{$absen->date .' ' .$absen->id}}</td>
-=======
                             <td>{{$absen->date}}</td>
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                             <td>{{$absen->time_in}}</td>
                             <td>{{$absen->time_out}}</td>
                             <td>{{$absen->catatan}}</td>
                             <td>{{$absen->status}}</td>
-<<<<<<< HEAD
                             @if(Auth::user()->hasAnyRole('manager'))
                             <td>
                                 <a href="{{url('StatusAbsenDitolak', $absen->id)}}">
@@ -67,24 +58,6 @@
                                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTerima" data-id="{{$absen->id}}">
                                     Terima
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalStatus" data-id="{{$absen->id}}">
-=======
-                            @if(Auth::user()->hasAnyRole('pengawas'))
-                            <td>
-                                @if ($absen->status == 'diterima')
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalStatus">
-                                    Tolak
-                                </button>
-                                @endif
-                                @if ($absen->status == 'ditolak')
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTerima">
-                                    Terima
-                                </button>
-                                @endif
-                                @if ($absen->status == 'belum diterima')
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTerima">
-                                    Terima
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalStatus">
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                                         Tolak
                                     </button>
                                     @endif
@@ -111,15 +84,10 @@
             </div>
             <div class="modal-body">
                 <p>Apakah anda yakin ingin menolak verifikasi</p>
-<<<<<<< HEAD
                 <p>{{url('StatusAbsenDitolak', $absen->id)}}</p>
             </div>
             <div class="modal-footer">
 
-=======
-            </div>
-            <div class="modal-footer">
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <a href="{{url('StatusAbsenDitolak', $absen->id)}}" class="btn btn-primary">Ya, Saya yakin</a>
             </div>

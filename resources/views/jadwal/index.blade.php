@@ -25,11 +25,7 @@
                       <th>Hari</th>
                       <th>Keterangan Kerja</th>
                       <th>Lokasi</th>
-<<<<<<< HEAD
                       @if (Auth::user()->hasAnyRole('manager'))
-=======
-                      @if (Auth::user()->hasAnyRole('manager', 'pengawas'))
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                       <th>Aksi</th>
                       @endif
                     </tr>
@@ -40,11 +36,7 @@
                       <td>{{$jadwal->hari}}</td>
                       <td>{{$jadwal->keterangan_kerja}}</td>
                       <td>{{$jadwal->lokasi}}</td>
-<<<<<<< HEAD
                       @if (Auth::user()->hasAnyRole('manager'))
-=======
-                      @if (Auth::user()->hasAnyRole('manager', 'pengawas'))
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                       <td>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-success btn-sm" data-toggle="modal" onclick="editJadwal({{$jadwal->id}})" data-target="#exampleModal">
@@ -90,11 +82,6 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-  
-=======
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
-
   @stop
   @section('script')
 

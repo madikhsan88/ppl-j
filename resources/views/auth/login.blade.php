@@ -39,11 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-<<<<<<< HEAD
                                         <h1 class="h4 text-gray-900 mb-4">LOGIN SI TOBACOO</h1>
-=======
-                                        <h1 class="h4 text-gray-900 mb-4">LOGIN SI PERKASA</h1>
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                                     </div>
                                     <!-- <form class="user"> -->
                                     <form method="POST" action="{{ route('login') }}">
@@ -75,17 +71,9 @@
                                             </button>
                                             <hr>
                                             <div class="text-center">
-<<<<<<< HEAD
                                                 <small>* admin-> Email : admin@gmail.com -> Pass : admin123</small>
                                                 <br>
                                                 <small>* karyawan-> Email : karyawan@gmail.com -> Pass : karyawan123</small>
-=======
-                                                @if (Route::has('password.request'))
-                                                <a class="small" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
-                                                </a>
-                                                @endif
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                                             </div>
                                         </div>
                                     </form>
@@ -114,8 +102,4 @@
 </body>
 
 </html>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
