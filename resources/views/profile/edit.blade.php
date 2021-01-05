@@ -10,7 +10,11 @@
         {{session('sukses')}}
       </div>
       @endif
+<<<<<<< HEAD
       <h3 class="page-title">Edit Profile</h3>
+=======
+      <h3 class="page-title">Data Karyawan</h3>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
       <br>
       <div class="row">
         <div class="col-md-12">

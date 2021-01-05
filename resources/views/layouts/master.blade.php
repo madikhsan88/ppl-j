@@ -9,7 +9,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
+<<<<<<< HEAD
 	<title>SI TOBACOO - Dashboard</title>
+=======
+	<title>SI PERKASA - Dashboard</title>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 
 	<!-- Custom fonts for this template-->
 	<link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -52,7 +56,11 @@
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
+<<<<<<< HEAD
 						<span>Copyright &copy; SI TOBACOO 2020</span>
+=======
+						<span>Copyright &copy; SI PERKASA 2020</span>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 					</div>
 				</div>
 			</footer>
@@ -121,6 +129,16 @@
 			$('#formPembayaran').hide();
 			$('#judul').text('Ajukan Peminjaman');
 		}
+<<<<<<< HEAD
+=======
+		$(document).ready(function() {
+			var form = $('#formPeminjaman');
+			form.on('submit', function(e) {
+				e.preventDefault();
+				alert('halo');
+			});
+		});
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 	</script>
 </body>
 

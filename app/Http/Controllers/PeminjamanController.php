@@ -3,28 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Absen;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
+use App\Peminjaman;
+use Illuminate\Support\Facades\Auth;
 
-class pendapatanController extends Controller
+class PeminjamanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function timeZone($location)
+    {
+        return date_default_timezone_set($location);
+    }
     public function index()
     {
-        $idKaryawan=Auth::id();
-        $gaji = Absen::join('users','users.id','=','absen.user_id')->get()->groupBy('user_id');      
         $role = Role::whereName('karyawan')->first();
-        $karyawan = DB::select('select users.id as id, (sum(hari)*gaji) as total_gaji, nama, sum(hari) as hari, gaji from users join absen on users.id = absen.user_id where absen.status = "diterima" GROUP BY users.id');
-        
-        // dd($karyawan);
-        return view('pendapatan.index', compact('karyawan'));
+        $karyawan = DB::table('model_has_roles')->where('role_id', $role->id)->get();
+
+        return view('peminjaman.index', compact('karyawan'));
     }
 
     /**
@@ -32,9 +32,20 @@ class pendapatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $this->timeZone('Asia/Jakarta');
+        $date = date("Y-m-d"); // 2017-02-01
+        $peminjaman = Peminjaman::create([
+            "user_id" => $request->input('user_id'),
+            "date" => $date,
+            "nominal" => $request->input('nominal'),
+            "keterangan" => $request->input('keterangan'),
+            "status" => 'diajukan'
+        ]);
+        $peminjaman->save();
+        $lastId = $peminjaman->id;
+        return redirect('/peminjaman')->with('sukses', 'Data Berhasil Ditambahkan')->with('lastId', $lastId);
     }
 
     /**
@@ -54,9 +65,13 @@ class pendapatanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user_id = Auth::user()->id;
+        $data_peminjaman = Peminjaman::where('user_id', $user_id)
+            ->orderBy('date', 'desc')
+            ->paginate(20);
+        return view('peminjaman.detail', compact('data_peminjaman'));
     }
 
     /**
@@ -67,8 +82,7 @@ class pendapatanController extends Controller
      */
     public function edit($id)
     {
-        $pendapatan= User::find($id);
-        return view ('pendapatan/edit',['pendapatan'=> $pendapatan]);
+        //
     }
 
     /**
@@ -80,9 +94,7 @@ class pendapatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pendapatan= User::find($id);
-        $pendapatan->update($request->all());
-        return redirect('/pendapatan')->with('sukses','Data Berhasil Diubah');
+        //
     }
 
     /**
@@ -93,6 +105,8 @@ class pendapatanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $peminjaman = Peminjaman::find($id);
+        $peminjaman->delete($peminjaman);
+        return redirect('/peminjaman');
     }
 }

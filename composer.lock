@@ -1575,6 +1575,7 @@
         },
         {
             "name": "spatie/laravel-permission",
+<<<<<<< HEAD
             "version": "3.18.0",
             "source": {
                 "type": "git",
@@ -1585,6 +1586,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/1c51a5fa12131565fe3860705163e53d7a26258a",
                 "reference": "1c51a5fa12131565fe3860705163e53d7a26258a",
+=======
+            "version": "3.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "35d40a45e49f5713f477823b571e05ef6a3a0394"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/35d40a45e49f5713f477823b571e05ef6a3a0394",
+                "reference": "35d40a45e49f5713f477823b571e05ef6a3a0394",
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1605,11 @@
                 "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
                 "illuminate/contracts": "^5.8|^6.0|^7.0|^8.0",
                 "illuminate/database": "^5.8|^6.0|^7.0|^8.0",
+<<<<<<< HEAD
                 "php": "^7.2.5|^8.0"
+=======
+                "php": "^7.2.5"
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
             },
             "require-dev": {
                 "orchestra/testbench": "^3.8|^4.0|^5.0|^6.0",
@@ -1641,11 +1658,19 @@
             ],
             "funding": [
                 {
+<<<<<<< HEAD
                     "url": "https://github.com/spatie",
                     "type": "github"
                 }
             ],
             "time": "2020-11-09T14:08:36+00:00"
+=======
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-09-16T16:47:18+00:00"
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
         },
         {
             "name": "swiftmailer/swiftmailer",

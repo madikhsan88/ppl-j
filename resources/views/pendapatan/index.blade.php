@@ -5,7 +5,11 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
     <div class="container-fluid">
+<<<<<<< HEAD
       <h1 class="h3 mb-2 text-gray-800">Pendapatan Pekerja</h1>
+=======
+      <h1 class="h3 mb-2 text-gray-800">PENDAPATAN PEKERJA</h1>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
       <br>
       @if(session ('sukses'))
       <div class="alert alert-success" role="alert">
@@ -36,18 +40,29 @@
                   <th>Gaji Per Hari</th>
                   <th>Total Hari Kerja</th>
                   <th>Total Pendapatan</th>
+<<<<<<< HEAD
                   @if(Auth::user()->hasAnyRole('manager'))
                   <th>Aksi</th>
                   @endif
+=======
+                  <th>Aksi</th>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                 </tr>
               </thead>
               <tbody>
                 @foreach ($karyawan as $index)
+<<<<<<< HEAD
                 <tr>
+=======
+
+                <tr>
+
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                   <td>{{$index->nama}}</td> 
                   <td>Rp {{$index->gaji}}</td> 
                   <td>{{$index->hari}} hari</td> 
                   <td>Rp {{$index->total_gaji}}</td> 
+<<<<<<< HEAD
                   @if(Auth::user()->hasAnyRole('manager'))
                   <td>
                     <!-- Button trigger modal -->
@@ -57,6 +72,13 @@
                     </a>
                   </td>
                   @endif
+=======
+                  <td>
+                    <!-- Button trigger modal -->
+                    <a href="/karyawan/{{$index->id}}/edit" class="btn btn-success btn-sm"> Edit</a>
+
+                  </td>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                 </tr>
                 @endforeach
               </tbody>
@@ -64,11 +86,16 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
     </div>
     <!-- /.container-fluid -->
   </div>
 </div>
 <!-- End of Main Content -->
+<<<<<<< HEAD
 <div id="modalStatus" class="modal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -95,3 +122,6 @@
     $('#gaji').prop('href', '/gaji/'+id+'/delete');
   }
 </script>
+=======
+@stop
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925

@@ -5,7 +5,11 @@
   <!-- MAIN CONTENT -->
   <div class="main-content">
     <div class="container-fluid">
+<<<<<<< HEAD
       <h1 class="h3 mb-2 text-gray-800">Karyawan</h1>
+=======
+      <h1 class="h3 mb-2 text-gray-800">PEKERJA</h1>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
       <br>
       @if(session ('sukses'))
       <div class="alert alert-success" role="alert">
@@ -87,11 +91,17 @@
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat</label>
+<<<<<<< HEAD
                                 <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
                               </div>
                               <small>Penambahan karyawan juga sebagai akun yang di gunakan oleh karyawan untuk login dengan password default "123456"</small>
                               <br>
                               <button type="submit" class="btn btn-primary mt-3">Tambahkan</button>
+=======
+                                <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Tambahkan</button>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                             </form>
                           </div>
                         </div>

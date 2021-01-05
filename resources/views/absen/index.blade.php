@@ -9,7 +9,10 @@
             <br>
             <div class="card shadow mb-4">
                 <div class="container">
+<<<<<<< HEAD
                     <br>
+=======
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
                     <div class="row">
                         <div class="col">
                             <div class="panel panel-default">

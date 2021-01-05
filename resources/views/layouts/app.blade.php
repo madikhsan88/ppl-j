@@ -8,7 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>SI TOBACOO - Login</title>
+=======
+    <title>SI PERKASA - Login</title>
+>>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
