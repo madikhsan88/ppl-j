@@ -8,5 +8,5 @@ class Absen extends Model
 {
     //
     protected $table = 'absen';
-    protected $fillable = ['user_id', 'date', 'time_in', 'time_out', 'catatan'];
+    protected $fillable = ['user_id', 'date', 'time_in', 'time_out', 'catatan', 'hari'];
 }

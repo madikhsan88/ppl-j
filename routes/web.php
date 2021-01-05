@@ -11,34 +11,43 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/login','UserController@login')->name('login');
-Route::post('/postlogin','UserController@postlogin');
-Route::get('/logout','UserController@logout');
-
-Route::group(['middleware' => 'auth'],function(){
-Route::get('/user','UserController@index');
-
-});
-
-Route::get('/jadwal','JadwalController@index');
-Route::get('/jadwal/{id}/edit','JadwalController@edit');
-Route::post('/jadwal/{id}/update','JadwalController@update');
-Route::get('/dashboard','DashboardController@index');
-Route::get('/karyawan','KaryawanController@index');
-Route::post('/karyawan/create','KaryawanController@create');
-Route::get('/karyawan/{id}/edit','KaryawanController@edit');
-Route::post('/karyawan/{id}/update','KaryawanController@update');
-Route::get('/karyawan/{id}/delete','KaryawanController@delete');
-Route::get('/profil','KaryawanController@show')->name('profil');
-Route::get('/absen','AbsenController@index');
-Route::get('/karyawan/{id}/profil', 'KaryawanController@profil');
+Route::get('/jadwal', 'JadwalController@index');
+Route::post('/jadwal/edit/{id}', 'JadwalController@edit');
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/karyawan', 'UserController@index');
+Route::post('/karyawan/create', 'UserController@create');
+Route::get('/karyawan/{id}/edit', 'UserController@edit');
+Route::post('/karyawan/{id}/update', 'UserController@update');
+Route::get('/karyawan/{id}/delete', 'UserController@delete');
+Route::get('/profile', 'UserController@show');
+Route::get('/absen', 'AbsenController@index');
+Route::get('/profile/{id}/edit', 'UserController@editProfile');
+Route::post('/profile/{id}/update', 'UserController@updateProfile');
+Route::get('getJadwal/{id}', 'JadwalController@getJadwal');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/absen', 'HomeController@absen');
+Route::get('/absensi', 'AbsenController@index');
+Route::get('StatusAbsenDiterima/{id}', 'AbsenController@StatusDiterima');
+Route::get('StatusAbsenDitolak/{id}', 'AbsenController@StatusDitolak');
+Route::post('/absen', 'AbsenController@absen');
+Route::get('/verife', 'AbsenController@show');
+Route::get('/pendapatan', 'pendapatanController@index');
+Route::get('/laporan','LaporanController@index');
+Route::post('/laporan/create','LaporanController@store');
+Route::get('/laporan/{id}/edit', 'LaporanController@edit');
+Route::post('/laporan/{id}/update', 'LaporanController@update');
+Route::get('/pendapatan/{id}/edit', 'PendapatanController@edit');
+Route::post('/pendapatan/{id}/update', 'PendapatanController@update');
+Route::get('/password', 'UserController@password');
+Route::post('/ganti-password', 'UserController@ganti_password');
+Route::get('/gaji/{id}/delete', 'AbsenController@destroy');
+Route::resource('pengumuman', 'PengumumanController');
 
