@@ -40,8 +40,8 @@
                             <td>{{$absen->status}}</td>
                             @if(Auth::user()->hasAnyRole('manager'))
                             <td>
+                                @if ($absen->status == 'diterima')
                                 <a href="{{url('StatusAbsenDitolak', $absen->id)}}">
-                                    @if ($absen->status == 'diterima')
                                     <button type="button" class="btn btn-danger">
                                         Tolak
                                     </button>
