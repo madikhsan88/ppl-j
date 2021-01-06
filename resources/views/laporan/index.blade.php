@@ -55,32 +55,6 @@
                     <!-- Button trigger modal -->
                     <a href="{{url('/laporan/'.$item->id.'/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Tambah Laporan</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <form action="{{url('/laporan/create')}}" method="POST">
-                              {{csrf_field()}}
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Lokasi</label>
-                                <input name="keterangan" type="text" class="form-control" placeholder="Lokasi" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Jumlah Panen</label>
-                                <input name="panen" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jumlah Panen" required>
-                              </div>
-                              <button type="submit" class="btn btn-primary">Tambahkan</button>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </td>
                 </tr>
                 @endforeach
@@ -91,6 +65,32 @@
       </div>
     </div>
     <!-- /.container-fluid -->
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Laporan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{url('/laporan/create')}}" method="POST">
+          {{csrf_field()}}
+          <div class="form-group">
+            <label for="exampleInputEmail1">Lokasi</label>
+            <input name="keterangan" type="text" class="form-control" placeholder="Lokasi" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Jumlah Panen</label>
+            <input name="panen" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jumlah Panen" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Tambahkan</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <!-- End of Main Content -->
