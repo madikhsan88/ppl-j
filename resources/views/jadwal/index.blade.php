@@ -44,6 +44,32 @@
                         </button>
                       </td>
                     </tr>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Jadwal</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="{{url('/jadwal/edit/'.$jadwal->id)}}" method="POST">
+                              {{csrf_field()}}
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Keterangan Kerja</label>
+                                <input name="keterangan_kerja" type="text" class="form-control" id="keterangan_kerja" aria-describedby="emailHelp">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">Lokasi Kerja</label>
+                                <input name="lokasi" type="text" class="form-control" id="lokasi">
+                              </div>
+                              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     @endif
                     @endforeach
                   </tbody>
@@ -56,32 +82,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit Jadwal</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form id="{{url('updateJadwal')}}" method="POST">
-            {{csrf_field()}}
-            <div class="form-group">
-              <label for="exampleInputEmail1">Keterangan Kerja</label>
-              <input name="keterangan_kerja" type="text" class="form-control" id="keterangan_kerja" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Lokasi Kerja</label>
-              <input name="lokasi" type="text" class="form-control" id="lokasi">
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+
   @stop
   @section('script')
 
