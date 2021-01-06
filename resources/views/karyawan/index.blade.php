@@ -125,7 +125,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="{{url('/karyawan/{{$item->model_id}}/delete')}}" class="btn btn-primary">Ya, Saya yakin</a>
+        <a href="{{url('/karyawan/'.$item->model_id.'/delete')}}" class="btn btn-primary">Ya, Saya yakin</a>
       </div>
     </div>
   </div>
