@@ -43,13 +43,13 @@
                 @foreach ($karyawan as $index => $item)
 
                 <tr>
-                  <td><a href="{{url('/karyawan/{{$item->model_id}}/profil')}}">{{DB::table('users')->where('id', $item->model_id)->value('nama')}}</a></td>
+                  <td><a href="{{url('/karyawan/'.$item->model_id.'/profil')}}">{{DB::table('users')->where('id', $item->model_id)->value('nama')}}</a></td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('jenis_kelamin')}}</td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('email')}}</td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('alamat')}}</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <a href="{{url('/karyawan/{{$item->model_id}}/edit')}}" class="btn btn-success btn-sm"> Edit</a>
+                    <a href="{{url('/karyawan/'.$item->model_id.'/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalStatus">
                       Delete
                     </button>

@@ -18,7 +18,7 @@
             <div class="panel-heading">
               <div class="panel">
                 <div class="panel-body">
-                  <form action="{{url('/laporan/{{$laporan->id}}/update')}}" method="POST">
+                  <form action="{{url('/laporan/'.$laporan->id.'/update')}}" method="POST">
                     {{csrf_field()}}
                     <div class="form-group">
                       <label for="exampleInputEmail1">Lokasi</label>

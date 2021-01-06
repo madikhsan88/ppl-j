@@ -51,7 +51,7 @@
                   @if(Auth::user()->hasAnyRole('manager'))
                   <td>
                     <!-- Button trigger modal -->
-                    <a href="{{url('/pendapatan/{{$index->id}}/edit')}}" class="btn btn-success btn-sm"> Edit</a>
+                    <a href="{{url('/pendapatan/'.$index->id.'/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalStatus" onclick=passingId({{$index->id}})>
                       Gajian
                     </a>
