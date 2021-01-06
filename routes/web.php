@@ -19,8 +19,9 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/jadwal', 'JadwalController@index');
-    Route::post('/jadwal/edit/{id}', 'JadwalController@edit');
+    // Route::get('/jadwal', 'JadwalController@index');
+    // Route::post('/jadwal/edit/{id}', 'JadwalController@edit');
+    Route::resource('jadwal', 'JadwalController');
     Route::get('/dashboard', 'DashboardController@index');
     Route::get('/karyawan', 'UserController@index');
     Route::post('/karyawan/create', 'UserController@create');

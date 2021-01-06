@@ -54,8 +54,9 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="{{url('/jadwal/edit/'.$jadwal->id)}}" method="POST">
-                              {{csrf_field()}}
+                            <form method="POST" action="{{url('/jadwal/'.$jadwal->id)}}">
+                              @method('PUT')
+                              @csrf
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Keterangan Kerja</label>
                                 <input name="keterangan_kerja" type="text" class="form-control" id="keterangan_kerja" aria-describedby="emailHelp">
