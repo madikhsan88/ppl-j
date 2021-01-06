@@ -18,7 +18,7 @@
             <div class="panel-heading">
               <div class="panel">
                 <div class="panel-body">
-                  <form method="POST" action="/pengumuman/{{$pengumuman->id}}" enctype="multipart/form-data">
+                  <form method="POST" action="{{url('/pengumuman/'.$pengumuman->id)}}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                     <div class="form-group">

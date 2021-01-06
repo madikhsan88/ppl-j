@@ -18,7 +18,7 @@
 
                                 <div class="panel-body">
                                     <table class="table table-responsive">
-                                        <form action="/absen" method="post">
+                                        <form action="{{url('/absen')}}" method="post">
                                             {{csrf_field()}}
                                             <tr>
                                                 <td>

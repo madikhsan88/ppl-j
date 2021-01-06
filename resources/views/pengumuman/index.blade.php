@@ -47,8 +47,8 @@
                                 </div>
                                 <p>{{$item->isi}} </p>
                                 <div class="article-cta mt-3">
-                                    <a href="/pengumuman/{{$item->id}}/edit" class="btn btn-success btn-sm">Edit</a>
-                                    <form class="d-inline" method="POST" action="/pengumuman/{{$item->id}}">
+                                    <a href="{{url('/pengumuman/'.$item->id.'/edit')}}" class="btn btn-success btn-sm">Edit</a>
+                                    <form class="d-inline" method="POST" action="{{url('/pengumuman/'.$item->id)}}">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger btn-sm" type="submit">hapus</button>

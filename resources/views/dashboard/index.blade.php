@@ -21,7 +21,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-								<a href="/absen">Absensi</a>
+								<a href="{{url('/absen')}}">Absensi</a>
 							</div>
 							<div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalHari}} hari</div>
 						</div>
@@ -68,7 +68,7 @@
 				</div>
 				<div class="container">
 					<table class="table table-responsive">
-						<form action="/absen" method="post">
+						<form action="{{url('/absen')}}" method="post">
 							{{csrf_field()}}
 							<tr>
 								<td class="col-5">
@@ -144,7 +144,7 @@
 					<div class="row no-gutters align-items-center">
 						<div class="col mr-2">
 							<div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-								<a href="/laporan">Total Hasil Panen</a>
+								<a href="{{url('/laporan')}}">Total Hasil Panen</a>
 							</div>
 							<div class="h5 mb-0 font-weight-bold text-gray-800">Rp 200,000</div>
 						</div>

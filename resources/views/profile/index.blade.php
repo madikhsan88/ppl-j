@@ -40,7 +40,7 @@
                     </li>
                 </ul>
 
-                <a href="/profile/{{Auth()->user()->id}}/edit" class="btn btn-primary btn-block"><b>Edit</b></a>
+                <a href="{{url('/profile/'.Auth()->user()->id.'/edit')}}" class="btn btn-primary btn-block"><b>Edit</b></a>
             </div>
             <!-- /.box-body -->
 

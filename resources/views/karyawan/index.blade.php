@@ -43,13 +43,13 @@
                 @foreach ($karyawan as $index => $item)
 
                 <tr>
-                  <td><a href="/karyawan/{{$item->model_id}}/profil">{{DB::table('users')->where('id', $item->model_id)->value('nama')}}</a></td>
+                  <td><a href="{{url('/karyawan/{{$item->model_id}}/profil')}}">{{DB::table('users')->where('id', $item->model_id)->value('nama')}}</a></td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('jenis_kelamin')}}</td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('email')}}</td>
                   <td>{{DB::table('users')->where('id', $item->model_id)->value('alamat')}}</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <a href="/karyawan/{{$item->model_id}}/edit" class="btn btn-success btn-sm"> Edit</a>
+                    <a href="{{url('/karyawan/{{$item->model_id}}/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalStatus">
                       Delete
                     </button>
@@ -64,7 +64,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="/karyawan/create" method="POST">
+                            <form action="{{url('/karyawan/create')}}" method="POST">
                               {{csrf_field()}}
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Nama Lengkap</label>
@@ -125,7 +125,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="/karyawan/{{$item->model_id}}/delete" class="btn btn-primary">Ya, Saya yakin</a>
+        <a href="{{url('/karyawan/{{$item->model_id}}/delete')}}" class="btn btn-primary">Ya, Saya yakin</a>
       </div>
     </div>
   </div>

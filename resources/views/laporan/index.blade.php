@@ -53,7 +53,7 @@
                   <td>{{$item->panen}} Kg</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <a href="/laporan/{{$item->id}}/edit" class="btn btn-success btn-sm"> Edit</a>
+                    <a href="{{url('/laporan/{{$item->id}}/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
@@ -65,7 +65,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="/laporan/create" method="POST">
+                            <form action="{{url('/laporan/create')}}" method="POST">
                               {{csrf_field()}}
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Lokasi</label>

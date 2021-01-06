@@ -66,7 +66,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="updateJadwal" method="POST">
+          <form id="{{url('updateJadwal')}}" method="POST">
             {{csrf_field()}}
             <div class="form-group">
               <label for="exampleInputEmail1">Keterangan Kerja</label>

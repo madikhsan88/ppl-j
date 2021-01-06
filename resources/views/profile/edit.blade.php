@@ -10,11 +10,7 @@
         {{session('sukses')}}
       </div>
       @endif
-<<<<<<< HEAD
       <h3 class="page-title">Edit Profile</h3>
-=======
-      <h3 class="page-title">Data Karyawan</h3>
->>>>>>> 472d3bbfad31822a10ac159405ea535277d4e925
       <br>
       <div class="row">
         <div class="col-md-12">
@@ -22,7 +18,7 @@
             <div class="panel-heading">
               <div class="panel">
                 <div class="panel-body">
-                  <form action="/profile/{{Auth()->user()->id}}/update" method="POST">
+                  <form action="{{url('/profile/'.Auth()->user()->id.'/update')}}" method="POST">
                     {{csrf_field()}}
                     <div class="form-group">
                       <label for="exampleInputEmail1">Nama Lengkap</label>
