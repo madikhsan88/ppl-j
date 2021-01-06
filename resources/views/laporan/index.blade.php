@@ -53,7 +53,7 @@
                   <td>{{$item->panen}} Kg</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <a href="{{url('/laporan/{{$item->id}}/edit')}}" class="btn btn-success btn-sm"> Edit</a>
+                    <a href="{{url('/laporan/'.$item->id.'/edit')}}" class="btn btn-success btn-sm"> Edit</a>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
