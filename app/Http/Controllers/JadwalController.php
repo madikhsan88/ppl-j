@@ -16,7 +16,7 @@ class JadwalController extends Controller
 
     public function update(Request $request, $id)
     {
-        $jadwal = \App\Jadwal::find($id);
+        $jadwal = \App\jadwal::find($id);
         $jadwal->update($request->all());
         return redirect('/jadwal')->with('sukses', 'Data Berhasil Diubah');
     }
